@@ -1,0 +1,17 @@
+{  
+  "name": "MyExtend",  
+  "version": "0.1.0",  
+  "description": "My test extention",  
+  "icons": { "128": "my.png" },
+  "permissions": ["contextMenus", "tabs"], 
+  "background": { 
+    "scripts": ["menu.js"] 
+  },
+  "content_scripts": [{
+    "all_frames": true,
+    "js": [ "jquery.min.js", "load.js" ],
+    "matches": [ "*://*.bilibili.com/*" ],
+    "run_at": "document_start"
+   }],
+  "manifest_version": 2  
+} 
