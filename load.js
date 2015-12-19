@@ -18,14 +18,21 @@ $(function() {
     $('#bofqi').css('margin', '20px 0px');
   }
   
-  if(window.location.host == '115.com' && getQueryString('ct') == 'play') {
-    setInterval(function() {
-      $('#video').css('height', 324);
-      $('#video').css('width', 574);
-    }, 3000);
-    $('.wrap,.video-container,.video-player').css('height', 324);
-    $('.video-container,.video-player').css('width', 574);
-    $('.video-container').css('min-height', 324);
-    $('.wrap').css('width', 584);
+  if(window.location.host == '115.com' || window.location.host == 'www.115.com') {
+    if (getQueryString('ct') == 'play') {
+      setInterval(function() {
+        $('#video').css('height', 324);
+        $('#video').css('width', 574);
+      }, 3000);
+      $('.wrap,.video-container,.video-player').css('height', 324);
+      $('.video-container,.video-player').css('width', 574);
+      $('.video-container').css('min-height', 324);
+      $('.wrap').css('width', 584);
+    } else {
+      $('.login-tab a').click(function(){
+        $('.login-contents').show();
+        $('.login-contents').find('div').show();
+      });
+    }
   }
 });

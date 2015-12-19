@@ -10,7 +10,12 @@
   "content_scripts": [{
     "all_frames": true,
     "js": [ "jquery.min.js", "load.js" ],
-    "matches": [ "*://*.bilibili.com/*", "*://115.com/*" ],
+    "matches": [ "*://*.bilibili.com/*", "*://115.com/*", "*://www.115.com/*" ],
+    "run_at": "document_start"
+   },{
+    "all_frames": true,
+    "js": [ "jquery.min.js", "avatar.js" ],
+    "matches": [ "*://*.zhihu.com/*" ],
     "run_at": "document_start"
    }],
   "manifest_version": 2  
